@@ -22,6 +22,7 @@
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Sign UP", "Register", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Quick Login
@@ -32,7 +33,8 @@
                                 <input type="text" name="Username" class="form-control" />
                                 <label for="Username">Password:</label>
                                 <input type="password" name="Password" class="form-control" /> <br />
-                                <input type="submit" class="btn btn-success" value="Login" />                            </form>
+                                <input type="submit" class="btn btn-success" value="Login" />
+                            </form>
                         </div>
                     </li>
                 </ul>
