@@ -19,6 +19,8 @@ namespace Csharlink.Models
         [Required]
         public string Username { get; set; }
         [Required]
+        public string AccessType { get; set; }
+        [Required]
         public string Password { get; set; }
         [Required]
         public int Likes { get; set; }

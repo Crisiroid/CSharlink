@@ -81,3 +81,5 @@ C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.dll
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.SqlServer.dll
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.xml
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.Migrations.UpdateUsers.resources
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.csproj.GenerateResource.cache
