@@ -140,7 +140,16 @@
     <Compile Include="Migrations\202308141341350_PostTable.designer.cs">
       <DependentUpon>202308141341350_PostTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308141348205_CommentsTable.cs" />
+    <Compile Include="Migrations\202308141348205_CommentsTable.designer.cs">
+      <DependentUpon>202308141348205_CommentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308141350470_CommentsUpdate.cs" />
+    <Compile Include="Migrations\202308141350470_CommentsUpdate.designer.cs">
+      <DependentUpon>202308141350470_CommentsUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308141341350_PostTable.resx">
       <DependentUpon>202308141341350_PostTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308141348205_CommentsTable.resx">
+      <DependentUpon>202308141348205_CommentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308141350470_CommentsUpdate.resx">
+      <DependentUpon>202308141350470_CommentsUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

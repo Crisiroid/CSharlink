@@ -6,22 +6,19 @@ using System.Web;
 
 namespace Csharlink.Models
 {
-    public class Post
+    public class Comment
     {
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Title { get; set; }
+        public int PostID { get; set; }
         [Required]
-        public string Body { get; set; }
+        public int SenderID { get; set; }
         [Required]
-        public int CreatorID { get; set; }
+        public String Title { get; set; }
         [Required]
-        public string CreatorName { get; set; }
-        [Required]
-        public int Views { get; set; }
+        public string Content { get; set; }
         [Required]
         public DateTime CreationDate { get; set; }
-        public ICollection<Comment> Comments { get; set; }
     }
 }

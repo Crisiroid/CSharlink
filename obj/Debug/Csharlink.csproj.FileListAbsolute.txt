@@ -84,3 +84,5 @@ C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.SqlS
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.Migrations.UpdateUsers.resources
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.csproj.GenerateResource.cache
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.Migrations.PostTable.resources
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.Migrations.CommentsTable.resources
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.Migrations.CommentsUpdate.resources
