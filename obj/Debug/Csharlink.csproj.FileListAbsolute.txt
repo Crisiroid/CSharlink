@@ -77,3 +77,7 @@ C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.cspr
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.dll
 C:\Users\Administrator\source\repos\Csharlink\Csharlink\obj\Debug\Csharlink.pdb
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.dll
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.xml
+C:\Users\Administrator\source\repos\Csharlink\Csharlink\bin\EntityFramework.SqlServer.xml
