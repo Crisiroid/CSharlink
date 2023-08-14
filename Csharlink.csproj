@@ -128,25 +128,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserPanel.cs" />
     <Compile Include="Data\CsharlinkDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202308141333243_UpdateUsers.cs" />
-    <Compile Include="Migrations\202308141333243_UpdateUsers.designer.cs">
-      <DependentUpon>202308141333243_UpdateUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202308141341350_PostTable.cs" />
-    <Compile Include="Migrations\202308141341350_PostTable.designer.cs">
-      <DependentUpon>202308141341350_PostTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202308141348205_CommentsTable.cs" />
-    <Compile Include="Migrations\202308141348205_CommentsTable.designer.cs">
-      <DependentUpon>202308141348205_CommentsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202308141350470_CommentsUpdate.cs" />
-    <Compile Include="Migrations\202308141350470_CommentsUpdate.designer.cs">
-      <DependentUpon>202308141350470_CommentsUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -210,6 +195,7 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\UserPanel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -240,20 +226,6 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202308141333243_UpdateUsers.resx">
-      <DependentUpon>202308141333243_UpdateUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308141341350_PostTable.resx">
-      <DependentUpon>202308141341350_PostTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308141348205_CommentsTable.resx">
-      <DependentUpon>202308141348205_CommentsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308141350470_CommentsUpdate.resx">
-      <DependentUpon>202308141350470_CommentsUpdate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

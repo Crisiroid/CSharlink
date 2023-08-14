@@ -20,5 +20,7 @@ namespace Csharlink.Data
         }
 
         public System.Data.Entity.DbSet<Csharlink.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<Csharlink.Models.Comment> Comments { get; set; }
+        public System.Data.Entity.DbSet<Csharlink.Models.Post> Posts { get; set; }
     }
 }
