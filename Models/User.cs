@@ -26,6 +26,7 @@ namespace Csharlink.Models
         public int Likes { get; set; }
         public int PostNum { get; set; }
         public string Status { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
 
 }

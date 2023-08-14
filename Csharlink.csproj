@@ -136,7 +136,12 @@
     <Compile Include="Migrations\202308141333243_UpdateUsers.designer.cs">
       <DependentUpon>202308141333243_UpdateUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308141341350_PostTable.cs" />
+    <Compile Include="Migrations\202308141341350_PostTable.designer.cs">
+      <DependentUpon>202308141341350_PostTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\UsersController.cs" />
@@ -230,6 +235,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202308141333243_UpdateUsers.resx">
       <DependentUpon>202308141333243_UpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308141341350_PostTable.resx">
+      <DependentUpon>202308141341350_PostTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
