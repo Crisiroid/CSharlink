@@ -14,7 +14,6 @@ namespace Csharlink.Controllers
 
         public ActionResult Index(string Username)
         {
-            if (TempData["Username"] == null) { return RedirectToAction("Index", "Home"); }
             User user = db.Users.FirstOrDefault(x => x.Username == Username);
             TempData["Username"] = user.Username;
             user.Status = "Online!";
