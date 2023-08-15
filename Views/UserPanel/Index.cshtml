@@ -1,4 +1,4 @@
-﻿
+﻿@model Csharlink.Models.User
 @{
     ViewBag.Title = "Index";
 }
@@ -9,6 +9,24 @@
             }
 
 
+<main>
+    <div class="row">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Actions
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><p>Hello @Model.Name. <br /> You have <span class="text-danger">@Model.Likes Likes!</span> </p></li>
+                    <li class="list-group-item"><a href="/UserPanel/Contents/@Model.Username">Content Management</a></li>
+                    <li class="list-group-item"><a href="/UserPanel/Profile/@Model.Username">View Profile</a></li>
+                    <li class="list-group-item"><a href="/UserPanel/Logout/@Model.Id">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9">
 
-<h2>Index</h2>
+        </div>
+    </div>
+</main>
 

@@ -10,7 +10,7 @@ namespace Csharlink.Controllers
 {
     public class HomeController : Controller
     {
-        public CsharlinkDB db = new CsharlinkDB();
+        public static CsharlinkDB db = new CsharlinkDB();
         public ActionResult Index()
         {
             if (TempData["LoginStatus"]!= null)
@@ -30,12 +30,8 @@ namespace Csharlink.Controllers
         {
             if (CheckUsername(Username, HashUtility.HashPassword(Password)))
             {
-                User user = db.Users.FirstOrDefault(x => x.Username == Username);
-                TempData["Username"] = user.Username;
-                user.Status = "Online!";
-                db.SaveChanges();
                 Session["UserStatus"] = "Login";
-                return RedirectToAction("Index", "UserPanel");
+                return RedirectToAction("Index", "UserPanel", new {Username = Username});
             }
             else
             {
