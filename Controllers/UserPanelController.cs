@@ -6,9 +6,8 @@ using System.Web.Mvc;
 
 namespace Csharlink.Controllers
 {
-    public class UserPanel : Controller
+    public class UserPanelController : Controller
     {
-        // GET: UserPanel
         public ActionResult Index()
         {
             return View();
