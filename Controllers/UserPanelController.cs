@@ -31,8 +31,6 @@ namespace Csharlink.Controllers
             }
             
         }
-
-
         public ActionResult Logout(int id)
         {
             User user = db.Users.FirstOrDefault(x => x.Id == id);
@@ -41,6 +39,11 @@ namespace Csharlink.Controllers
             db.SaveChanges();
             Session["UserStatus"] = null;
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult ContentList(int id)
+        {
+            return View(db.Posts.Where(x => x.CreatorID == id).ToList());
         }
         public bool CheckUsername(string Username, string Password)
         {
