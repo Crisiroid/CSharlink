@@ -32,6 +32,16 @@ namespace Csharlink.Controllers
             
         }
 
+
+        public ActionResult Logout(int id)
+        {
+            User user = db.Users.FirstOrDefault(x => x.Id == id);
+            TempData["Username"] = null;
+            user.Status = "Offile!";
+            db.SaveChanges();
+            Session["UserStatus"] = null;
+            return RedirectToAction("Index", "Home");
+        }
         public bool CheckUsername(string Username, string Password)
         {
             return db.Users.Any(u => u.Username == Username && u.Password == Password);
