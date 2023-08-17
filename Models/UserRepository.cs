@@ -29,7 +29,6 @@ namespace Csharlink.Models
             {
                 User user = db.Users.FirstOrDefault(x => x.Username == Username);
                 user.Status = "Online!";
-                TempData["Hello"]
                 db.SaveChanges();
                 return true;
             }
