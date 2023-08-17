@@ -15,14 +15,11 @@ namespace Csharlink.Controllers
         [HttpPost]
         public ActionResult Index(string Username, string Password)
         {
-            if (CheckUsername(Username, HashUtility.HashPassword(Password)))
+            if(UserRepository.Login(Username, Password))
             {
-                User user = db.Users.FirstOrDefault(x => x.Username == Username);
-                TempData["Username"] = user.Username;
-                user.Status = "Online!";
+                TempData["Username"] = Username;
                 Session["UserStatus"] = "Login";
-                db.SaveChanges();
-                return View(user);
+                return View();
             }
             else
             {
@@ -45,9 +42,6 @@ namespace Csharlink.Controllers
         {
             return View(db.Posts.Where(x => x.CreatorID == id).ToList());
         }
-        public bool CheckUsername(string Username, string Password)
-        {
-            return db.Users.Any(u => u.Username == Username && u.Password == Password);
-        }
+       
     }
 }
