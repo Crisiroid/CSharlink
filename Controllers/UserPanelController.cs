@@ -10,8 +10,6 @@ namespace Csharlink.Controllers
 {
     public class UserPanelController : Controller
     {
-        public static CsharlinkDB db = new CsharlinkDB();
-
         [HttpPost]
         public ActionResult Index(string Username, string Password)
         {
@@ -30,17 +28,22 @@ namespace Csharlink.Controllers
         }
         public ActionResult Logout(int id)
         {
-            User user = db.Users.FirstOrDefault(x => x.Id == id);
-            TempData["Username"] = null;
-            user.Status = "Offile!";
-            db.SaveChanges();
-            Session["UserStatus"] = null;
-            return RedirectToAction("Index", "Home");
+            if (UserRepository.Logout(id))
+            {
+                TempData["Username"] = null;
+                Session["UserStatus"] = null;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index", "UserPanel");
+            }
+            
         }
 
         public ActionResult ContentList(int id)
         {
-            return View(db.Posts.Where(x => x.CreatorID == id).ToList());
+            return View(ContentRepository.ShowPosts(id));
         }
        
     }

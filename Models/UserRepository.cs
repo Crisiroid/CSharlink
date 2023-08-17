@@ -38,6 +38,15 @@ namespace Csharlink.Models
             }
         }
 
+        public static bool Logout(int id)
+        {
+            User user = db.Users.FirstOrDefault(x => x.Id == id);
+            user.Status = "Offile!";
+            db.SaveChanges();
+            return true;
+
+        }
+
         public static bool CheckUsername(string Username, string Password)
         {
             return db.Users.Any(u => u.Username == Username && u.Password == Password);
