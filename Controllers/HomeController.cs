@@ -34,13 +34,7 @@ namespace Csharlink.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            user.Password = HashUtility.HashPassword(user.Password);
-            user.PostNum = 0;
-            user.Status = "Offline";
-            user.AccessType = "User";
-            user.Likes = 0;
-            db.Users.Add(user); 
-            db.SaveChanges();
+            UserRepository.Signup(user);
             TempData["LoginStatus"] = "Account Created Successfully. You can login now!";
             return RedirectToAction("Index", "Home");
         }
