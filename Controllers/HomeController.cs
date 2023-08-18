@@ -39,6 +39,14 @@ namespace Csharlink.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public JsonResult CheckUsernameAvailability(string username)
+        {
+            bool isAvailable = UserRepository.UsernameAvailability(username);
+
+
+            return Json(new { IsAvailable = isAvailable }, JsonRequestBehavior.AllowGet);
+        }
+
 
     }
 }

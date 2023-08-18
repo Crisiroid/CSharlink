@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Csharlink.Models
 {
@@ -47,6 +48,10 @@ namespace Csharlink.Models
 
         }
 
+        public static bool UsernameAvailability(string Username)
+        {
+            return db.Users.Any(u => u.Username == Username);
+        }
         public static bool CheckUsername(string Username, string Password)
         {
             return db.Users.Any(u => u.Username == Username && u.Password == Password);

@@ -13,10 +13,35 @@
     <label for="Email" class="form-label">Email: </label>
     <input type="Text" class="form-control" name="Email" />
     <label for="Username" class="form-label">Username: </label>
-    <input type="Text" class="form-control" name="Username" />
+    <input type="Text" class="form-control" name="Username" id="username" />
+    <span id="availabilityStatus"></span>
     <label for="Password" class="form-label">Password: </label>
     <input type="password" class="form-control" name="Password" />
     <input type="submit" class="btn btn-success" value="Sign UP!" />
 </form>
 
 <a href="/Home/Index" class="btn btn-danger">Back to main menu</a>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#username').on('keyup', function () {
+                var username = $(this).val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/Home/CheckUsernameAvailability',
+                    data: { username: username },
+                    success: function (data) {
+                        if (data.IsAvailable) {
+                            $('#username-status').text('Username is available.');
+                        } else {
+                            $('#username-status').text('Username is not available.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    }

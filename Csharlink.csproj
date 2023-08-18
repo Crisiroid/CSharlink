@@ -135,9 +135,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\ContentRepository.cs" />
     <Compile Include="Models\HashUtility.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\UsersController.cs" />
   </ItemGroup>
