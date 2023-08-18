@@ -3,11 +3,26 @@
     ViewBag.Title = "Index";
 }
 
-@if(ViewBag.pm != null)
-            {
-                <div class="alert alert-info">@ViewBag.pm</div>
-            }
+@if (ViewBag.pm != null)
+{
+    <div class="alert alert-info">@ViewBag.pm</div>
+}
 
+@section Styles{
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #editor {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+}
 
 <main>
     <div class="row">
@@ -25,8 +40,42 @@
             </div>
         </div>
         <div class="col-9">
-
+            <div>
+                <button id="boldButton"><b>B</b></button>
+                <button id="italicButton"><i>I</i></button>
+                <label for="fontSizeSelect">Font Size:</label>
+                <select id="fontSizeSelect">
+                    <option value="12">12px</option>
+                    <option value="16">16px</option>
+                    <option value="20">20px</option>
+                    <option value="24">24px</option>
+                </select>
+            </div>
+            <div>
+                <textarea id="editor" placeholder="Type your text here..."></textarea>
+            </div>
         </div>
     </div>
 </main>
 
+@section scripts {
+    <script>
+        const editor = document.getElementById('editor');
+        const boldButton = document.getElementById('boldButton');
+        const italicButton = document.getElementById('italicButton');
+        const fontSizeSelect = document.getElementById('fontSizeSelect');
+
+        boldButton.addEventListener('click', () => {
+            document.execCommand('bold', false, null);
+        });
+
+        italicButton.addEventListener('click', () => {
+            document.execCommand('italic', false, null);
+        });
+
+        fontSizeSelect.addEventListener('change', () => {
+            const fontSize = fontSizeSelect.value + 'px';
+            document.execCommand('fontSize', false, fontSize);
+        });
+    </script>
+}
