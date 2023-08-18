@@ -10,7 +10,6 @@ namespace Csharlink.Controllers
 {
     public class HomeController : Controller
     {
-        public static CsharlinkDB db = new CsharlinkDB();
         public ActionResult Index()
         {
             if (TempData["LoginStatus"]!= null)

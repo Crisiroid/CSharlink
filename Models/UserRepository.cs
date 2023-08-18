@@ -24,18 +24,18 @@ namespace Csharlink.Models
             db.SaveChanges();
         }
 
-        public static bool Login(string Username, string Password)
+        public static User Login(string Username, string Password)
         {
             if (CheckUsername(Username, HashUtility.HashPassword(Password)))
             {
                 User user = db.Users.FirstOrDefault(x => x.Username == Username);
                 user.Status = "Online!";
                 db.SaveChanges();
-                return true;
+                return user;
             }
             else
             {
-                return false;
+                return null;
             }
         }
 
@@ -52,6 +52,7 @@ namespace Csharlink.Models
         {
             return db.Users.Any(u => u.Username == Username);
         }
+
         public static bool CheckUsername(string Username, string Password)
         {
             return db.Users.Any(u => u.Username == Username && u.Password == Password);

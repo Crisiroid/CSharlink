@@ -13,11 +13,12 @@ namespace Csharlink.Controllers
         [HttpPost]
         public ActionResult Index(string Username, string Password)
         {
-            if(UserRepository.Login(Username, Password))
+            User user = UserRepository.Login(Username, Password);
+            if(user != null)
             {
                 TempData["Username"] = Username;
                 Session["UserStatus"] = "Login";
-                return View();
+                return View(user);
             }
             else
             {
