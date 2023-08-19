@@ -53,7 +53,7 @@ namespace Csharlink.Controllers
         [HttpPost]
         public ActionResult AddContent(Post post)
         {
-            if(ContentRepository.AddPost(post, 1, "Crisiroid"))
+            if(ContentRepository.AddPost(post, 1, TempData["Username"].ToString()))
             {
                 TempData["PostAddStatus"] = "Post Added Successfully";
             }
