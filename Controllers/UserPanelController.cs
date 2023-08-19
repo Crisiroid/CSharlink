@@ -50,10 +50,17 @@ namespace Csharlink.Controllers
         {
             return View(ContentRepository.ShowPosts(id));
         }
+        [HttpGet]
+        public ActionResult CreatePost(int id)
+        {
+            TempData["id"] = id;
+            return View();
+        }
+
         [HttpPost]
         public ActionResult AddContent(Post post)
         {
-            if(ContentRepository.AddPost(post, 1, TempData["Username"].ToString()))
+            if(ContentRepository.AddPost(post, (int)TempData["id"], TempData["Username"].ToString()))
             {
                 TempData["PostAddStatus"] = "Post Added Successfully";
             }
