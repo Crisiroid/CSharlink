@@ -16,6 +16,10 @@ namespace Csharlink.Controllers
             User user = UserRepository.Login(Username, Password);
             if(user != null)
             {
+                if (TempData["PostAddStatus"]!= null)
+                {
+                    ViewBag.pm = TempData["PostAddStatus"].ToString();
+                }
                 TempData["Username"] = Username;
                 Session["UserStatus"] = "Login";
                 return View(user);
@@ -46,6 +50,20 @@ namespace Csharlink.Controllers
         {
             return View(ContentRepository.ShowPosts(id));
         }
-       
+        [HttpPost]
+        public ActionResult AddContent(Post post)
+        {
+            if(ContentRepository.AddPost(post, 1, "Crisiroid"))
+            {
+                TempData["PostAddStatus"] = "Post Added Successfully";
+            }
+            else
+            {
+                TempData["PostAddStatus"] = "We Couldn't add You post";
+            }
+            return RedirectToAction("Index", "UserPanel");
+
+        }
+
     }
 }
