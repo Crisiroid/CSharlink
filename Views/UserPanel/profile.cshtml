@@ -1,0 +1,18 @@
+﻿@model Csharlink.Models.User
+@{
+    ViewBag.Title = "profile";
+}
+
+<h2>profile</h2>
+
+<div class="card-body">
+    <ul>
+        <li>Username: @Model.Username</li>
+        <li>First Name: @Model.Name</li>
+        <li>Last name: @Model.LastName</li>
+        <li>Email Address: @Model.Email</li>
+        <li>likes: @Model.Likes</li>
+    </ul>
+</div>
+
+<br /><a href="/UserPanel/Index/@Model.Id" class="btn btn-info">GO back</a>

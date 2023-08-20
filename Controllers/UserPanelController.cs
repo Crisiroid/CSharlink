@@ -22,7 +22,7 @@ namespace Csharlink.Controllers
                 }
                 TempData["Username"] = Username;
                 Session["UserStatus"] = "Login";
-                return RedirectToAction("Index", "UserPanel", new { u = (int) user.Id});
+                return RedirectToAction("Index", "UserPanel", new { u = (int)user.Id });
             }
             else
             {
@@ -32,7 +32,7 @@ namespace Csharlink.Controllers
         }
         public ActionResult Index(int u)
         {
-            return View(UserRepository.findUser(u));            
+            return View(UserRepository.findUser(u));
         }
         public ActionResult Logout(int id)
         {
@@ -46,7 +46,12 @@ namespace Csharlink.Controllers
             {
                 return RedirectToAction("Index", "UserPanel");
             }
-            
+
+        }
+
+        public ActionResult profile(int id)
+        {
+            return View(UserRepository.findUser(id));
         }
 
         public ActionResult ContentList(int id)
