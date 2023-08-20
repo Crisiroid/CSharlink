@@ -1,0 +1,16 @@
+﻿@model Csharlink.Models.Post
+@{
+    ViewBag.Title = "View";
+}
+<div class="card">
+    <h5 class="card-header">Read Post</h5>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">@Model.Body</p>
+        <p class="card-text">@Model.CreationDate by @Model.CreatorName</p>
+    </div>
+</div>
+
+
+<a class="btn btn-info" href="/Home/Index">Return Home</a>
+

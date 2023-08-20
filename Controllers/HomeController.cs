@@ -16,7 +16,7 @@ namespace Csharlink.Controllers
             {
                 ViewBag.pm = TempData["LoginStatus"].ToString();
             }
-            return View();
+            return View(ContentRepository.ShowAllPosts());
         }
 
         public ActionResult About()
@@ -24,6 +24,10 @@ namespace Csharlink.Controllers
 
             return View();
 
+        }
+        public ActionResult View(int id)
+        {
+            return View(ContentRepository.ShowOnePost(id));
         }
 
         public ActionResult Register()
