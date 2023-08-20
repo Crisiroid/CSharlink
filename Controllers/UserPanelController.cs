@@ -54,11 +54,12 @@ namespace Csharlink.Controllers
         public ActionResult CreatePost(int id)
         {
             TempData["id"] = id;
+            ViewBag.id = id;
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddContent(Post post)
+        public ActionResult CreatePost(Post post)
         {
             if(ContentRepository.AddPost(post, (int)TempData["id"], TempData["Username"].ToString()))
             {
