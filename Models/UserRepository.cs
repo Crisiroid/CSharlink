@@ -53,6 +53,11 @@ namespace Csharlink.Models
             return db.Users.Any(u => u.Username == Username);
         }
 
+        public static User findUser(int id)
+        {
+            return db.Users.FirstOrDefault(u => u.Id == id);
+        }
+
         public static bool CheckUsername(string Username, string Password)
         {
             return db.Users.Any(u => u.Username == Username && u.Password == Password);

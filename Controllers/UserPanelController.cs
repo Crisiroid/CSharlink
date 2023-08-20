@@ -11,25 +11,28 @@ namespace Csharlink.Controllers
     public class UserPanelController : Controller
     {
         [HttpPost]
-        public ActionResult Index(string Username, string Password)
+        public ActionResult Login(string Username, string Password)
         {
             User user = UserRepository.Login(Username, Password);
-            if(user != null)
+            if (user != null)
             {
-                if (TempData["PostAddStatus"]!= null)
+                if (TempData["PostAddStatus"] != null)
                 {
                     ViewBag.pm = TempData["PostAddStatus"].ToString();
                 }
                 TempData["Username"] = Username;
                 Session["UserStatus"] = "Login";
-                return View(user);
+                return RedirectToAction("Index", "UserPanel", new { u = (int) user.Id});
             }
             else
             {
                 TempData["LoginStatus"] = "Login Failed. Sign up!";
                 return RedirectToAction("Index", "Home");
             }
-            
+        }
+        public ActionResult Index(int u)
+        {
+            return View(UserRepository.findUser(u));            
         }
         public ActionResult Logout(int id)
         {
@@ -69,7 +72,7 @@ namespace Csharlink.Controllers
             {
                 TempData["PostAddStatus"] = "We Couldn't add You post";
             }
-            return RedirectToAction("Index", "UserPanel");
+            return RedirectToAction("Index", "UserPanel", new {u = (int)TempData["id"] });
 
         }
 
