@@ -19,7 +19,7 @@ namespace Csharlink.Models
 
         public static Post ShowOnePost(int id)
         {
-            return (Post)UserRepository.db.Posts.Where(x => x.Id == id);
+            return UserRepository.db.Posts.FirstOrDefault(x => x.Id == id);
         }
         public static bool AddPost(Post post, int id, string name)
         {
