@@ -23,7 +23,7 @@
 <br />
 @foreach (var item in Model.comments)
 {
-    <div class="card">
+    <div class="card" style="margin-right: 60px;">
         <h5 class="card-header bg-danger">@item.Title</h5>
         <div class="card-body">
             <p class="card-text">@item.Content</p>
@@ -31,8 +31,9 @@
     </div>
 }
 
-<div class="card">
-    <h5 class="card-header">Add a new Comment</h5>
+<br />
+<div class="card" style="margin-right: 50px;">
+    <h5 class="card-header bg-info bg-gradient">Add a new Comment</h5>
     <div class="card-body">
         <form action="/Home/CreateComment" method="post">
             <label for="Title">Title:</label>
@@ -42,8 +43,7 @@
             <input type="hidden" name="PostID" value="@Model.post.Id" />
             <input type="hidden" name="SenderID" value="1" />
             <input type="hidden" name="CreationDate" value="@DateTime.Now" />
-            <input type="submit" value="Add Comment" class="btn btn-success" />
-
+            <br /><input type="submit" value="Add Comment" class="btn btn-success" />
         </form>
     </div>
 </div>
@@ -51,5 +51,5 @@
 
 
 
-<a class="btn btn-info" href="/Home/Index">Return Home</a>
+<br /><a class="btn btn-info" href="/Home/Index">Return Home</a>
 
