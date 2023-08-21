@@ -1,13 +1,23 @@
-﻿@model Csharlink.Models.Post
+﻿@model Csharlink.Models.PostWithComments
 @{
     ViewBag.Title = "View";
+    if(Model.comments.ToList() == null)
+    {
+        new Csharlink.Models.Comment
+        {
+            Title = "Nothing to show here",
+            Content = "Add a new Comment",
+            CreationDate = DateTime.Now,
+
+        };
+    }
 }
 <div class="card">
     <h5 class="card-header">Read Post</h5>
     <div class="card-body">
-        <h5 class="card-title">@Model.Title</h5>
-        <p class="card-text">@Model.Body</p>
-        <p class="card-text">@Model.CreationDate by @Model.CreatorName</p>
+        <h5 class="card-title">@Model.post.Title</h5>
+        <p class="card-text">@Model.post.Body</p>
+        <p class="card-text">@Model.post.CreationDate by @Model.post.CreatorName</p>
     </div>
 </div>
 
