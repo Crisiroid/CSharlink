@@ -133,8 +133,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308211807283_DBUPdatee.cs" />
+    <Compile Include="Migrations\202308211807283_DBUPdatee.designer.cs">
+      <DependentUpon>202308211807283_DBUPdatee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentRepository.cs" />
     <Compile Include="Models\ContentRepository.cs" />
     <Compile Include="Models\HashUtility.cs" />
     <Compile Include="Models\Post.cs" />
@@ -233,6 +238,11 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202308211807283_DBUPdatee.resx">
+      <DependentUpon>202308211807283_DBUPdatee.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
