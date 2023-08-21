@@ -17,9 +17,15 @@ namespace Csharlink.Models
             return UserRepository.db.Posts.ToList();
         }
 
-        public static Post ShowOnePost(int id)
+        public static PostWithComments ShowOnePost(int id)
         {
-            return UserRepository.db.Posts.FirstOrDefault(x => x.Id == id);
+            Post post = UserRepository.db.Posts.FirstOrDefault(x => x.Id == id);
+            List <Comment> comments = UserRepository.db.Comments.Where(p => p.PostID == id).ToList();
+
+            return new PostWithComments { 
+                post = post,
+                comments = comments
+            };
         }
         public static bool AddPost(Post post, int id, string name)
         {
