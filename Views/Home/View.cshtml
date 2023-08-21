@@ -1,7 +1,7 @@
 ﻿@model Csharlink.Models.PostWithComments
 @{
     ViewBag.Title = "View";
-    if(Model.comments.ToList() == null)
+    if (Model.comments.ToList() == null)
     {
         new Csharlink.Models.Comment
         {
@@ -20,6 +20,34 @@
         <p class="card-text">@Model.post.CreationDate by @Model.post.CreatorName</p>
     </div>
 </div>
+<br />
+@foreach (var item in Model.comments)
+{
+    <div class="card">
+        <h5 class="card-header bg-danger">@item.Title</h5>
+        <div class="card-body">
+            <p class="card-text">@item.Content</p>
+        </div>
+    </div>
+}
+
+<div class="card">
+    <h5 class="card-header">Add a new Comment</h5>
+    <div class="card-body">
+        <form action="/Home/CreateComment" method="post">
+            <label for="Title">Title:</label>
+            <input type="text" name="Title" class="form-control" />
+            <label for="Title">Comment:</label>
+            <input type="text" name="Comment" class="form-control" />
+            <input type="hidden" name="PostId" value="@Model.post.Id" />
+            <input type="submit" value="Add Comment" class="btn btn-success"/>
+            <input type="hidden" name="SenderId" value="1" />
+            <input type="hidden" name="CreationDate" value="@DateTime.Now" />
+        </form>
+    </div>
+</div>
+
+
 
 
 <a class="btn btn-info" href="/Home/Index">Return Home</a>

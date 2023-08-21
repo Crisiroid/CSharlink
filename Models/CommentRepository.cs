@@ -9,7 +9,6 @@ namespace Csharlink.Models
     {
         public static void AddComment(Comment comment)
         {
-            comment.CreationDate = DateTime.Now;
             UserRepository.db.Comments.Add(comment);
             UserRepository.db.SaveChanges();
         }

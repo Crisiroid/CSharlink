@@ -50,6 +50,12 @@ namespace Csharlink.Controllers
             return Json(new { IsAvailable = isAvailable }, JsonRequestBehavior.AllowGet);
         }
 
-
+        [HttpPost]
+        public ActionResult CreateComment(Comment comment)
+        {
+            //comment.SenderID = 2;
+            CommentRepository.AddComment(comment);
+            return RedirectToAction("View", "Home", new { id = comment.PostID });
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Csharlink.Models
         [Required]
         public int SenderID { get; set; }
         [Required]
-        public String Title { get; set; }
+        public string Title { get; set; }
         [Required]
         public string Content { get; set; }
         [Required]
