@@ -38,11 +38,12 @@
             <label for="Title">Title:</label>
             <input type="text" name="Title" class="form-control" />
             <label for="Title">Comment:</label>
-            <input type="text" name="Comment" class="form-control" />
-            <input type="hidden" name="PostId" value="@Model.post.Id" />
-            <input type="submit" value="Add Comment" class="btn btn-success"/>
-            <input type="hidden" name="SenderId" value="1" />
+            <input type="text" name="Content" class="form-control" />
+            <input type="hidden" name="PostID" value="@Model.post.Id" />
+            <input type="hidden" name="SenderID" value="1" />
             <input type="hidden" name="CreationDate" value="@DateTime.Now" />
+            <input type="submit" value="Add Comment" class="btn btn-success" />
+
         </form>
     </div>
 </div>
