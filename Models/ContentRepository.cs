@@ -21,7 +21,8 @@ namespace Csharlink.Models
         {
             Post post = UserRepository.db.Posts.FirstOrDefault(x => x.Id == id);
             List <Comment> comments = UserRepository.db.Comments.Where(p => p.PostID == id).ToList();
-
+            post.Views += 1;
+            UserRepository.db.SaveChanges();
             return new PostWithComments { 
                 post = post,
                 comments = comments
