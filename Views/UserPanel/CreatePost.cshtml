@@ -4,7 +4,87 @@
     int id = ViewBag.id;
 }
 
+@section Styles{
+    .bold {
+      font-weight: bold;
+    }
+    
+    .italic {
+      font-style: italic;
+    }
+    
+    #textArea {
+      display: flex;
+      border: 0.5px solid black;
+      height: 200px;
+      width: 400px;
+      margin-top: 5px;
+    }
+}
+
 <h2>Create a new Post</h2>
+
+    <!-- bold -->
+    <button id="boldButton">Bold</button>
+    <!-- italic -->
+    <button id="italicButton">Italic</button>
+    <!-- font size -->
+    <select id="fontSizeSelect">
+      <option value="12">12px</option>
+      <option value="16">16px</option>
+      <option value="20">20px</option>
+      <option value="24">24px</option>
+    </select>
+    <!-- reset -->
+    <button id="resetButton">Reset</button>
+    <!-- text area -->
+    <div id="textArea" contenteditable="true">Type your text here...</div>
+
+@section scripts{
+    document.addEventListener("DOMContentLoaded", function () {
+      const textArea = document.getElementById("textArea");
+      const boldButton = document.getElementById("boldButton");
+      const italicButton = document.getElementById("italicButton");
+      const fontSizeSelect = document.getElementById("fontSizeSelect");
+      const resetButton = document.getElementById("resetButton");
+    
+      function toggleStyle(style) {
+        const selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+          const range = selection.getRangeAt(0);
+          const span = document.createElement("span");
+          span.classList.add(style);
+          range.surroundContents(span);
+        }
+      }
+    
+      function removeAllStyles() {
+        const spans = textArea.querySelectorAll("span");
+        spans.forEach((span) => {
+          span.outerHTML = span.innerHTML;
+        });
+      }
+    
+      boldButton.addEventListener("click", function () {
+        toggleStyle("bold");
+      });
+    
+      italicButton.addEventListener("click", function () {
+        toggleStyle("italic");
+      });
+    
+      fontSizeSelect.addEventListener("change", function () {
+        const selectedSize = fontSizeSelect.value;
+        textArea.style.fontSize = selectedSize + "px";
+      });
+    
+      resetButton.addEventListener("click", function () {
+        textArea.innerHTML = "Start typing here again...";
+        textArea.style.fontSize = "16px";
+        removeAllStyles();
+      });
+    });
+}
 
 <div class="row">
     <form action="/UserPanel/CreatePost" method="post" class="col-12">
